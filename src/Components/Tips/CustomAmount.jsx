@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
+// add a verification regex or something for the tip
+
 const CustomAmount = () => {
   const [tip, setTip] = useState(0);
   return (
     <input
-      type="number"
+      type="text"
       value={tip}
       placeholder="Custom"
       onChange={(e) => {

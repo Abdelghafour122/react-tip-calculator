@@ -1,9 +1,11 @@
 import React from "react";
+import FormScreen from "./FormScreen";
 import ResultScreen from "./ResultScreen";
 
 const CoreCalculator = () => {
   return (
     <div className="calculator">
+      <FormScreen />
       <ResultScreen />
     </div>
   );
