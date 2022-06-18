@@ -2,7 +2,7 @@ import React from "react";
 
 const ResultScreen = () => {
   return (
-    <div className="results">
+    <div className="result-screen">
       <div className="amount">
         <div className="text">
           <p>Tip</p>

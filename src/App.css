@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --vd-cyan: hsl(183, 100%, 15%);
+  --dg-cyan: hsl(186, 14%, 43%);
+  --light-dg-cyan: hsl(184, 14%, 56%);
+  --lg-cyan: hsl(185, 41%, 84%);
+  --light-lg-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  --form-inputs: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Space Mono";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--lg-cyan);
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.calculator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.calculator .form-screen {
+  flex-basis: 50%;
+}
+
+.calculator .form-screen .input-field {
+}
+
+.calculator .form-screen .input-field input {
+  direction: rtl;
+}
+
+.calculator .result-screen {
+  background-color: var(--vd-cyan);
+  flex-basis: 50%;
+}
+
+.calculator .result-screen .amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calculator .result-screen .amount .text {
+}
+
+.calculator .result-screen .amount .text p:first-of-type {
+  color: var(--white);
+}
+.calculator .result-screen .amount .text p:last-of-type {
+  color: var(--light-dg-cyan);
+}
+
+.calculator .result-screen .amount .numeric-val {
+  color: var(--strong-cyan);
+  font-size: 30px;
+}

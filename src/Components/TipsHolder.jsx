@@ -1,18 +1,21 @@
 import React from "react";
-import FixedAmount from "./Tips/FixedAmount";
-import CustomAmount from "./Tips/CustomAmount";
 
-const TipsHolder = () => {
+const AMOUNTS = [5, 10, 15, 20, 25, 50];
+
+const TipsHolder = ({ setTip, setCustomTip, customTip }) => {
   return (
     <div>
       <h4>Select Tip %</h4>
       <div className="tips">
-        <FixedAmount amount={5} />
-        <FixedAmount amount={10} />
-        <FixedAmount amount={15} />
-        <FixedAmount amount={25} />
-        <FixedAmount amount={50} />
-        <CustomAmount />
+        {AMOUNTS.map((i) => {
+          return <button key={i} onClick={() => setTip(i)}>{`${i}%`}</button>;
+        })}
+        <input
+          type="text"
+          placeholder="Custom"
+          value={customTip}
+          onChange={(e) => setCustomTip(e.target.value)}
+        />
       </div>
     </div>
   );
