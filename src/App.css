@@ -51,7 +51,7 @@ body {
 .calculator .form-screen .input-field {
 }
 
-.calculator .form-screen .input-field input {
+.calculator .form-screen input {
   direction: rtl;
 }
 
