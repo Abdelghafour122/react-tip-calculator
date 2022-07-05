@@ -17,7 +17,7 @@ const FormScreen = ({ bill, numOfPeople, setTip, setNumOfPeople, setBill }) => {
       <TipsHolder setTip={setTip} />
       <div className="input-field">
         <h4>Number of People</h4>
-        {numOfPeople === 0 && <p>Can't be zero</p>}
+        {Number(numOfPeople) === 0 && <p>Can't be zero</p>}
         <input
           type="text"
           name="people"

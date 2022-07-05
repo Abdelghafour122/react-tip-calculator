@@ -21,9 +21,12 @@ const CoreCalculator = () => {
   const [tipPerP, setTipPerP] = useState(Number);
 
   useEffect(() => {
-    if (bill && tip && numOfPeople) {
+    if (bill && tip && Number(numOfPeople) !== 0) {
       setTotal(evaluateTotal(tip, bill, numOfPeople));
       setTipPerP(evaluateTipPerP(tip, bill, numOfPeople));
+    } else if (Number(numOfPeople) === 0) {
+      setTotal(0);
+      setTipPerP(0);
     }
   }, [tip, bill, numOfPeople]);
 
@@ -36,7 +39,7 @@ const CoreCalculator = () => {
     return;
   };
 
-  console.log(total);
+  console.log(numOfPeople);
   return (
     <div className="calculator">
       <FormScreen
