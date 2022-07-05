@@ -5,7 +5,7 @@ const FormScreen = ({ bill, numOfPeople, setTip, setNumOfPeople, setBill }) => {
   return (
     <div className="form-screen">
       <div className="input-field">
-        <h4>Bill</h4>
+        <p className="label">Bill</p>
         <input
           type="text"
           name="bill"
@@ -16,7 +16,7 @@ const FormScreen = ({ bill, numOfPeople, setTip, setNumOfPeople, setBill }) => {
       </div>
       <TipsHolder setTip={setTip} />
       <div className="input-field">
-        <h4>Number of People</h4>
+        <p className="label">Number of People</p>
         {Number(numOfPeople) === 0 && <p>Can't be zero</p>}
         <input
           type="text"
