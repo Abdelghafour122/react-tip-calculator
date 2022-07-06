@@ -16,7 +16,6 @@ const TipsHolder = ({ setTip, removeSelected }) => {
           return (
             <button
               key={i}
-              className=""
               onClick={(e) => {
                 setTip(i);
                 setCustomTip();
