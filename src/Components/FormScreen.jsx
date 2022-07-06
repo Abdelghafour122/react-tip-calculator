@@ -19,6 +19,7 @@ const FormScreen = ({
             name="bill"
             value={bill ? bill : ""}
             placeholder="0"
+            maxLength="10"
             onChange={(e) => !isNaN(e.target.value) && setBill(e.target.value)}
           />
         </div>
@@ -34,6 +35,7 @@ const FormScreen = ({
             type="text"
             name="people"
             placeholder="0"
+            maxLength="2"
             value={numOfPeople ? numOfPeople : ""}
             onChange={(e) =>
               !isNaN(e.target.value) && setNumOfPeople(e.target.value)

@@ -30,6 +30,7 @@ const TipsHolder = ({ setTip, removeSelected }) => {
           type="text"
           placeholder="Custom"
           value={customTip ? customTip : ""}
+          maxLength="2"
           onChange={(e) => {
             !isNaN(e.target.value) && setCustomTip(e.target.value);
             removeSelected();
