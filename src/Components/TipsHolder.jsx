@@ -1,24 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const AMOUNTS = [5, 10, 15, 25, 50];
-const removeSelected = (elements) => {
-  // console.log(elements);
-  elements.forEach((element) => {
-    element.classList.contains("selected") &&
-      element.classList.remove("selected");
-  });
-};
-const TipsHolder = ({ setTip }) => {
+
+const TipsHolder = ({ setTip, removeSelected }) => {
   const [customTip, setCustomTip] = useState(0);
   useEffect(() => {
     customTip && setTip(customTip);
-    // removeSelected(document.querySelectorAll(".tips button"));
-    console.log(document.querySelectorAll(".tips > *"));
-    removeSelected(document.querySelectorAll(".tips > *"));
   }, [customTip, setTip]);
-
-  // useEffect(() => {
-  // }, [customTip]);
 
   return (
     <div className="tips-holder">
@@ -28,13 +16,12 @@ const TipsHolder = ({ setTip }) => {
           return (
             <button
               key={i}
+              className=""
               onClick={(e) => {
                 setTip(i);
                 setCustomTip();
-                removeSelected(
-                  Array.of(...e.currentTarget.parentNode.children)
-                );
-                e.currentTarget.classList.add("selected");
+                removeSelected();
+                e.currentTarget.classList.toggle("selected");
               }}
             >{`${i}%`}</button>
           );
@@ -43,9 +30,10 @@ const TipsHolder = ({ setTip }) => {
           type="text"
           placeholder="Custom"
           value={customTip ? customTip : ""}
-          onChange={(e) =>
-            !isNaN(e.target.value) && setCustomTip(e.target.value)
-          }
+          onChange={(e) => {
+            !isNaN(e.target.value) && setCustomTip(e.target.value);
+            removeSelected();
+          }}
         />
       </div>
     </div>

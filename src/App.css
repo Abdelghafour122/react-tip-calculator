@@ -43,10 +43,14 @@ body {
   background-color: var(--white);
   padding: 20px;
   border-radius: 10px;
+  width: 650px;
 }
 
 .calculator .form-screen {
   flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .calculator .form-screen .input-field {
@@ -60,18 +64,78 @@ body {
   direction: rtl;
 }
 
-.calculator .form-screen .input-field input {
+.calculator .form-screen .input-field .inp-holder {
+  width: 100%;
+  position: relative;
+}
+.calculator .form-screen .input-field .inp-holder:nth-of-type(1)::before {
+  content: url(./images/icon-dollar.svg);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+  left: 7px;
+}
+
+.calculator .form-screen .input-field .inp-holder:nth-of-type(2)::before {
+  content: url(./images/icon-person.svg);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+  left: 7px;
+}
+
+.calculator .form-screen input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: var(--light-lg-cyan);
+  padding: 7px 7px 7px 27px;
+  border-radius: 3px;
+  color: var(--vd-cyan);
+  font-size: 17px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  caret-color: var(--strong-cyan);
+}
+
+.calculator .form-screen input:focus {
+  border: 2px solid var(--strong-cyan);
+}
+
+.calculator .form-screen .tips-holder input {
+  padding: 7px;
+}
+
+.calculator .form-screen .input-field input::placeholder {
+  font-weight: 700;
+  color: var(--light-dg-cyan);
+  font-size: 17px;
+}
+
+.calculator .form-screen .labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .calculator .form-screen p.label {
   font-weight: 700;
   color: var(--dg-cyan);
-  margin: 0;
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.calculator .form-screen p.irre {
+  color: rgb(255, 108, 135);
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .calculator .form-screen .tips-holder .tips {
   display: grid;
-  grid-template-columns: repeat(3, 74px);
+  grid-template-columns: repeat(3, minmax(75px, 1fr));
   grid-template-rows: repeat(2, 33px);
   gap: 10px;
 }
@@ -129,6 +193,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  font-size: 14px;
 }
 
 .calculator .result-screen .amount .text p:first-of-type {

@@ -30,12 +30,22 @@ const CoreCalculator = () => {
     }
   }, [tip, bill, numOfPeople]);
 
+  const removeSelected = (
+    elements = document.querySelectorAll(".tips button")
+  ) => {
+    elements.forEach((element) => {
+      element.classList.contains("selected") &&
+        element.classList.remove("selected");
+    });
+  };
+
   const reset = () => {
     setBill(0);
     setNumOfPeople(0);
     setTip(0);
     setTotal(0);
     setTipPerP(0);
+    removeSelected();
     return;
   };
 
@@ -48,6 +58,7 @@ const CoreCalculator = () => {
         setTip={setTip}
         numOfPeople={numOfPeople}
         setNumOfPeople={setNumOfPeople}
+        removeSelected={removeSelected}
       />
       <ResultScreen total={total} tipPerP={tipPerP} reset={reset} />
     </div>
